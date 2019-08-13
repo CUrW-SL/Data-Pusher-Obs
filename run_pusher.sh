@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-
-cd /home/uwcc-admin/data-pusher-curwobs
+cd /home/uwcc-admin/Data-Pusher-Obs
 echo "Inside `pwd`"
-#
+
 # If no venv (python3 virtual environment) exists, then create one.
 if [ ! -d "venv" ]
 then
