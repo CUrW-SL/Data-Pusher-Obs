@@ -21,17 +21,12 @@ from Utils import \
     extract_n_push_winddirection, \
     extract_n_push_waterlevel
 
-USERNAME = "curw"
-PASSWORD = "curw@123"
-HOST = "10.138.0.6"
-PORT = 3306
-DATABASE = "curw_obs"
-
 def utc_to_sl(utc_dt):
     sl_timezone = pytz.timezone('Asia/Colombo')
     return utc_dt.replace(tzinfo=pytz.utc).astimezone(tz=sl_timezone)
 
 try:
+    pool = get_Pool(host=CURW_OBS_HOST, port=CURW_OBS_PORT, user=CURW_OBS_USERNAME, password=CURW_OBS_PASSWORD, db=CURW_OBS_DATABASE)
     ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
     COMMON_DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
     forceInsert = False
@@ -96,8 +91,8 @@ try:
             #print(unit_type)
             #print(unit)
             #print("**********")
-            #pool = get_Pool(host=CURW_OBS_HOST, port=CURW_OBS_PORT, user=CURW_OBS_USERNAME, password=CURW_OBS_PASSWORD, db=CURW_OBS_DATABASE)
-            pool = get_Pool(host=HOST, port=PORT, user=USERNAME, password=PASSWORD, db=DATABASE)
+            
+            #pool = get_Pool(host=HOST, port=PORT, user=USERNAME, password=PASSWORD, db=DATABASE)
             obs_hash_id = generate_curw_obs_hash_id(pool, variable=variable, unit=unit, unit_type=unit_type,
                                                     latitude=latitude, longitude=longitude, station_name=station_name, description=description,
                                                     start_date=start_datetime)
@@ -147,3 +142,6 @@ try:
 except Exception as ex:
     print('Error occurred while extracting and pushing data:', ex)
 
+finally:
+    destroy_Pool(pool=pool)
+    print("Process finished")
