@@ -415,7 +415,21 @@
       "min_values": ["0"],
       "description": "Yantai water level guage, A&T communication",
       "run_name": "A&T Labs",
-      "mean_sea_level": 7.820
+      "mean_sea_level": 7.057
+    },
+    {
+      "stationId": "curw_wl_kaduwela",
+      "name": "Kaduwela",
+      "station_meta": ["curw_wl_kaduwela", "Kaduwela", 6.936431, 79.985192, 0, "Campbell water level guage, A&T communication box"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Waterlevel"],
+      "units": ["m"],
+      "max_values": ["30"],
+      "min_values": ["0"],
+      "description": "Campbell water level guage, A&T communication",
+      "run_name": "A&T Labs",
+      "mean_sea_level": 11.540
     }
   ]
 }
