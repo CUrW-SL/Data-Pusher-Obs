@@ -267,14 +267,15 @@
     {
       "stationId": "curw_ws_waga",
       "name": "Waga",
-      "station_meta": ["curw_ws_waga", "Waga Rathanasara College", 6.86893, 80.15402, 0, "Leecom station with their own Rain Gauge"],
+      "station_meta": ["curw_ws_waga", "Waga Rathanasara College", 6.86893, 80.15402, 0, "Leecom station, Waga Rathanasara College"],
       "source": "WeatherStation",
       "type": "Observed",
-      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Tick"],
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
       "units": ["mm", "oC", "m/s", "degrees", "%", "-"],
       "max_values": ["120", "40", "30", "360", "100", "1"],
       "min_values": ["0", "0", "0", "0", "0", "0"],
-      "description": "Waga Rathanasara College",
+      "description": "Leecom station, Waga Rathanasara College",
       "run_name": "Leecom"
     }
   ],
@@ -438,6 +439,7 @@
       "type": "Observed",
       "variables": ["Waterlevel"],
       "units": ["m"],
+      "unit_type": ["Instantaneous"],
       "max_values": ["30"],
       "min_values": ["0"],
       "description": "Campbell water level guage, A&T communication",
