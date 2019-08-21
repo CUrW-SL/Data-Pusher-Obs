@@ -96,10 +96,7 @@ try:
             prev_end_date = TS.get_end_date(obs_hash_id)
 
             if prev_end_date is not None:
-                start_datetime = prev_end_date
-                print("*****")
-                print(start_datetime)
-                print("AAAAAA")
+                start_datetime = prev_end_date.strftime(COMMON_DATE_FORMAT)
                 if variable == 'Precipitation':
                     try:
                         extract_n_push_precipitation(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
