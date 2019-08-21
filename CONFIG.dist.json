@@ -253,7 +253,7 @@
     {
       "stationId": "curw_ws_aruwakkalu",
       "name": "Aruwakkalu",
-      "station_meta": ["curw_ws_aruwakkalu", "aruwakkalu", 8.241336, 79.819860, 0, "Leecom station, Aruwakkalu Sanitary Landfill"],
+      "station_meta": ["curw_ws_aruwakkalu", "Aruwakkalu", 8.241336, 79.819860, 0, "Leecom station, Aruwakkalu Sanitary Landfill"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],
@@ -262,6 +262,19 @@
       "max_values": ["120", "40", "30", "360", "100"],
       "min_values": ["0", "0", "0", "0", "0"],
       "description": "Aruwakkalu",
+      "run_name": "Leecom"
+    },
+    {
+      "stationId": "curw_ws_waga",
+      "name": "Waga",
+      "station_meta": ["curw_ws_waga", "Waga Rathanasara College", 6.86893, 80.15402, 0, "Leecom station with their own Rain Gauge"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Tick"],
+      "units": ["mm", "oC", "m/s", "degrees", "%", "-"],
+      "max_values": ["120", "40", "30", "360", "100", "1"],
+      "min_values": ["0", "0", "0", "0", "0", "0"],
+      "description": "Waga Rathanasara College",
       "run_name": "Leecom"
     }
   ],
@@ -419,7 +432,7 @@
     },
     {
       "stationId": "curw_wl_kaduwela",
-      "name": "Kaduwela",
+      "name": "Kaduwela Bridge",
       "station_meta": ["curw_wl_kaduwela", "Kaduwela", 6.936431, 79.985192, 0, "Campbell water level guage, A&T communication box"],
       "source": "WeatherStation",
       "type": "Observed",
