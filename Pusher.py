@@ -10,6 +10,7 @@ from datetime import timedelta
 from curwmysqladapter import MySQLAdapter, Station
 from db_adapter.constants import CURW_OBS_HOST, CURW_OBS_PORT, CURW_OBS_USERNAME, CURW_OBS_PASSWORD, CURW_OBS_DATABASE
 from db_adapter.base import get_Pool, destroy_Pool
+from db_adapter.curw_obs.timeseries import Timeseries
 from Utils import \
     generate_curw_obs_hash_id, \
     extract_n_push_precipitation, \
@@ -29,6 +30,7 @@ try:
     pool = get_Pool(host=CURW_OBS_HOST, port=CURW_OBS_PORT, user=CURW_OBS_USERNAME, password=CURW_OBS_PASSWORD, db=CURW_OBS_DATABASE)
     ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
     COMMON_DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+    COMMON_DATE_FORMATSTRT = '%Y-%m-%d %H:%M:00'
     forceInsert = False
 
     parser = argparse.ArgumentParser()
@@ -63,7 +65,8 @@ try:
     # now_date = datetime.now()
     start_datetime_obj = now_date - timedelta(hours=2)
     end_datetime_obj = now_date
-    start_datetime = start_datetime_obj.strftime(COMMON_DATE_FORMAT)
+
+    start_datetime = start_datetime_obj.strftime(COMMON_DATE_FORMATSTRT)
     end_datetime = end_datetime_obj.strftime(COMMON_DATE_FORMAT)
 
     # start_datetime = '2018-07-04 00:00:00'
@@ -86,62 +89,62 @@ try:
         description = station['description']
 
         for variable, unit, unit_type in zip(variables, units, unit_types):
-            #print("**********")
-            #(variable)
-            #print(unit_type)
-            #print(unit)
-            #print("**********")
-            
-            #pool = get_Pool(host=HOST, port=PORT, user=USERNAME, password=PASSWORD, db=DATABASE)
+
             obs_hash_id = generate_curw_obs_hash_id(pool, variable=variable, unit=unit, unit_type=unit_type,
-                                                    latitude=latitude, longitude=longitude, station_name=station_name, description=description,
-                                                    start_date=start_datetime)
-            if variable == 'Precipitation':
-                try:
-                    extract_n_push_precipitation(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
-                except Exception as ex:
-                    print("Error occured while pushing precipitation.", ex)
-            elif variable == 'Temperature':
-                try:
-                    extract_n_push_temperature(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
-                except Exception as ex:
-                    print("Error occured while pushing temperature.", ex)
-            elif variable == 'WindSpeed':
-                try:
-                    extract_n_push_windspeed(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
-                except Exception as ex:
-                    print("Error occured while pushing wind-speed.", ex)
-            elif variable == 'WindGust':
-                try:
-                    extract_n_push_windgust(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
-                except Exception as ex:
-                    print("Error occured while pushing wind-gust.", ex)
-            elif variable == 'Humidity':
-                try:
-                    extract_n_push_humidity(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
-                except Exception as ex:
-                    print("Error occured while pushing humidity", ex)
-            elif variable == 'SolarRadiation':
-                try:
-                    extract_n_push_solarradiation(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
-                except Exception as ex:
-                    print("Error occured while pushing solar-radiation", ex)
-            elif variable == 'WindDirection':
-                try:
-                    extract_n_push_winddirection(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
-                except Exception as ex:
-                    print("Error occured while pushing solar-radiation", ex)
-            elif variable == 'Waterlevel':
-                try:
-                    extract_n_push_waterlevel(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
-                except Exception as ex:
-                    print("Error occured while pushing water-level", ex)
-            else:
-                print("Unknown variable type: %s" %variable)
+                                                    latitude=latitude, longitude=longitude, station_name=station_name, description=description)
+            TS = Timeseries(pool=pool)
+            prev_end_date = TS.get_end_date(obs_hash_id)
+
+            if prev_end_date is not None:
+                start_datetime = prev_end_date
+                print("*****")
+                print(start_datetime)
+                print("AAAAAA")
+                if variable == 'Precipitation':
+                    try:
+                        extract_n_push_precipitation(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
+                    except Exception as ex:
+                        print("Error occured while pushing precipitation.", ex)
+                elif variable == 'Temperature':
+                    try:
+                        extract_n_push_temperature(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
+                    except Exception as ex:
+                        print("Error occured while pushing temperature.", ex)
+                elif variable == 'WindSpeed':
+                    try:
+                        extract_n_push_windspeed(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
+                    except Exception as ex:
+                        print("Error occured while pushing wind-speed.", ex)
+                elif variable == 'WindGust':
+                    try:
+                        extract_n_push_windgust(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
+                    except Exception as ex:
+                        print("Error occured while pushing wind-gust.", ex)
+                elif variable == 'Humidity':
+                    try:
+                        extract_n_push_humidity(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
+                    except Exception as ex:
+                        print("Error occured while pushing humidity", ex)
+                elif variable == 'SolarRadiation':
+                    try:
+                        extract_n_push_solarradiation(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
+                    except Exception as ex:
+                        print("Error occured while pushing solar-radiation", ex)
+                elif variable == 'WindDirection':
+                    try:
+                        extract_n_push_winddirection(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
+                    except Exception as ex:
+                        print("Error occured while pushing solar-radiation", ex)
+                elif variable == 'Waterlevel':
+                    try:
+                        extract_n_push_waterlevel(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
+                    except Exception as ex:
+                        print("Error occured while pushing water-level", ex)
+                else:
+                    print("Unknown variable type: %s" %variable)
 
 except Exception as ex:
     print('Error occurred while extracting and pushing data:', ex)
 
 finally:
     destroy_Pool(pool=pool)
-    print("Process finished")
