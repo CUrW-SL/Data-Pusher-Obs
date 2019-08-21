@@ -270,11 +270,11 @@
       "station_meta": ["curw_ws_waga", "Waga Rathanasara College", 6.86893, 80.15402, 0, "Leecom station, Waga Rathanasara College"],
       "source": "WeatherStation",
       "type": "Observed",
-      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],      
+      "units": ["mm", "oC", "m/s", "degrees", "%"],
       "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
-      "units": ["mm", "oC", "m/s", "degrees", "%", "-"],
-      "max_values": ["120", "40", "30", "360", "100", "1"],
-      "min_values": ["0", "0", "0", "0", "0", "0"],
+      "max_values": ["120", "40", "30", "360", "100"],
+      "min_values": ["0", "0", "0", "0", "0"],
       "description": "Leecom station, Waga Rathanasara College",
       "run_name": "Leecom"
     }
