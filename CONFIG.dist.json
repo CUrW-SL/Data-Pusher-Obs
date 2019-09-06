@@ -375,6 +375,62 @@
       "min_values": ["0", "0", "0", "0", "0"],
       "description": "Leecom station, Kotuwila Gamini Vidyalaya",
       "run_name": "Leecom"
+    },
+    {
+      "stationId": "curw_ws_madiwela",
+      "name": "Madiwela",
+      "station_meta": ["curw_ws_madiwela", "Madiwela", 6.87695, 79.91971, 0, "Leecom station, Sri Rahula Maha Vidyalaya"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],
+      "units": ["mm", "oC", "m/s", "degrees", "%"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100"],
+      "min_values": ["0", "0", "0", "0", "0"],
+      "description": "Leecom station, Sri Rahula Maha Vidyalaya",
+      "run_name": "Leecom"
+    }, 
+    {
+      "stationId": "curw_ws_kithulgala",
+      "name": "Kithulgala",
+      "station_meta": ["curw_ws_kithulgala", "Kithulgala", 7.00497, 80.40895, 0, "Leecom station, Kalyani Maha Vidyalaya"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],
+      "units": ["mm", "oC", "m/s", "degrees", "%"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100"],
+      "min_values": ["0", "0", "0", "0", "0"],
+      "description": "Leecom station, Kalyani Maha Vidyalaya",
+      "run_name": "Leecom"
+    },
+    {
+      "stationId": "curw_ws_battaramulla",
+      "name": "Battaramulla",
+      "station_meta": ["curw_ws_battaramulla", "Battaramulla", 6.903658, 79.909309, 0, "Leecom station, Diyatha Uyana"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],
+      "units": ["mm", "oC", "m/s", "degrees", "%"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100"],
+      "min_values": ["0", "0", "0", "0", "0"],
+      "description": "Leecom station, Diyatha Uyana",
+      "run_name": "Leecom"
+    },
+    {
+      "stationId": "curw_ws_maskeliya",
+      "name": "Maskeliya",
+      "station_meta": ["curw_ws_maskeliya", "Maskeliya", 6.82955, 80.57551, 0, "Leecom station, Saman Eliya Maha Vidyalaya"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],
+      "units": ["mm", "oC", "m/s", "degrees", "%"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100"],
+      "min_values": ["0", "0", "0", "0", "0"],
+      "description": "Leecom station, Saman Eliya Maha Vidyalaya",
+      "run_name": "Leecom"
     }
     
   ],
