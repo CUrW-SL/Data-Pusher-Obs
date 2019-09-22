@@ -162,8 +162,8 @@
     },
     {
       "stationId": "curw_hingurana",
-      "name": "Hingurana",
-      "station_meta": ["curw_hingurana", "Hingurana", 6.904552, 80.407895, 0, "Hingurana Station"],
+      "name": "Hingurana Study",
+      "station_meta": ["curw_hingurana", "Hingurana Study", 6.904552, 80.407895, 0, "Hingurana Station"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Precipitation", "Temperature", "WindSpeed", "WindGust", "WindDirection", "Humidity", "SolarRadiation"],
@@ -178,8 +178,8 @@
     },
     {
       "stationId": "curw_jaffna",
-      "name": "Jaffna",
-      "station_meta": ["curw_jaffna", "Jaffna", 9.6607949, 80.0298459, 0, "District Secretariat Office Jaffna"],
+      "name": "Jaffna Study",
+      "station_meta": ["curw_jaffna", "Jaffna Study", 9.6607949, 80.0298459, 0, "District Secretariat Office Jaffna"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Precipitation", "Temperature", "WindSpeed", "WindGust", "WindDirection", "Humidity", "SolarRadiation"],
@@ -430,6 +430,20 @@
       "max_values": ["120", "40", "30", "360", "100"],
       "min_values": ["0", "0", "0", "0", "0"],
       "description": "Leecom station, Saman Eliya Maha Vidyalaya",
+      "run_name": "Leecom"
+    },
+    {
+      "stationId": "curw_ws_jaffna",
+      "name": "Jaffna",
+      "station_meta": ["curw_ws_jaffna", "Jaffna", 9.661416, 80.029467, 0, "Leecom station, District Secretrait - Jaffna"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],
+      "units": ["mm", "oC", "m/s", "degrees", "%"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100"],
+      "min_values": ["0", "0", "0", "0", "0"],
+      "description": "Leecom station, District Secretrait - Jaffna",
       "run_name": "Leecom"
     }
     
