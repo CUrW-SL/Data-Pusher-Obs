@@ -105,9 +105,10 @@ def _extract_n_push(extract_adapter, station, start_date, end_date, pool, obs_ha
               % (timeseries_meta['variable'], station['stationId']))
         return False
 
+
     #insert extracted time series to the curwobs db
     inserted_rows = insert_timeseries(pool=pool, timeseries=timeseries, tms_id=obs_hash_id)
-    print("Inserted %d rows from %s tmieseries values successfully..." % (inserted_rows, len(timeseries)))
+    print("Inserted tmieseries length {} values successfully...".format(len(timeseries)))
 
 def extract_n_push_precipitation(extract_adapter, station, start_date, end_date, pool, obs_hash_id):
 
