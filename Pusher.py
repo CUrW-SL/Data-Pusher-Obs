@@ -31,6 +31,7 @@ try:
     ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
     COMMON_DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
     COMMON_DATE_FORMATSTRT = '%Y-%m-%d %H:%M:00'
+    COMMON_DATE_FORMATEND = '%Y-%m-%d %H:%M:00'
     forceInsert = False
 
     parser = argparse.ArgumentParser()
@@ -67,7 +68,7 @@ try:
     end_datetime_obj = now_date
 
     start_datetime = start_datetime_obj.strftime(COMMON_DATE_FORMATSTRT)
-    end_datetime = end_datetime_obj.strftime(COMMON_DATE_FORMAT)
+    end_datetime = end_datetime_obj.strftime(COMMON_DATE_FORMATEND)
 
     # start_datetime = '2018-07-04 00:00:00'
     # end_datetime = '2018-07-31 00:00:00'
