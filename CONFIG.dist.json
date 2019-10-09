@@ -237,20 +237,6 @@
       "basin": "KLB"
     },
     {
-      "stationId": "curw_urumewella",
-      "name": "Urumewella Study",
-      "station_meta": ["curw_urumewella", "Urumewella Study", 7.079348 , 80.348785 , 0, "A&T Communication Box, Texas Standard Rain Gauge"],
-      "source": "WeatherStation",
-      "type": "Observed",
-      "variables": ["Precipitation"],
-      "units": ["mm"],
-      "unit_type": ["Accumulative"],
-      "max_values": ["120"],
-      "min_values": ["0"],
-      "description": "A&T Communication Box, Texas Standard Rain Gauge",
-      "run_name": "A&T Labs"
-    },
-    {
       "stationId": "curw_ws_aruwakkalu",
       "name": "Aruwakkalu",
       "station_meta": ["curw_ws_aruwakkalu", "Aruwakkalu", 8.241336, 79.819860, 0, "Leecom station, Aruwakkalu Sanitary Landfill"],
