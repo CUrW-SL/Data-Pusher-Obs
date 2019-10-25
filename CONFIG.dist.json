@@ -473,7 +473,22 @@
       "min_values": ["0", "0", "0", "0", "0"],
       "description": "Hingurana Kanishta Vidyalaya",
       "run_name": "Leecom"
-    }
+    },
+    {
+      "stationId": "curw_ws_dehiowita",
+      "name": "Dehiowita",
+      "station_meta": ["curw_ws_dehiowita", "Dehiowita", 6.96453, 80.26477, 0, "Leecom station, Dehiowita National College"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],
+      "units": ["mm", "oC", "m/s", "degrees", "%"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100"],
+      "min_values": ["0", "0", "0", "0", "0"],
+      "description": "Leecom station, Dehiowita National College",
+      "run_name": "Leecom"
+     }
+
   ],
   "water_level_stations": [
     {
