@@ -510,10 +510,24 @@
       "type": "Observed",
       "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],
       "units": ["mm", "oC", "m/s", "degrees", "%"],
-     "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous"],
       "max_values": ["120", "40", "30", "360", "100"],
       "min_values": ["0", "0", "0", "0", "0"],
       "description": "Kaduwela",
+      "run_name": "Leecom"
+     },
+     {
+      "stationId": "curw_ws_thalawathugoda",
+      "name": "Thalawathugoda",
+      "station_meta": ["curw_ws_thalawathugoda", "Thalawathugoda", 6.87363, 79.95041, 0, "Leecom station, Vidura College"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],
+      "units": ["mm", "oC", "m/s", "degrees", "%"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100"],
+      "min_values": ["0", "0", "0", "0", "0"],
+      "description": "Leecom station, Vidura College",
       "run_name": "Leecom"
      }
 
