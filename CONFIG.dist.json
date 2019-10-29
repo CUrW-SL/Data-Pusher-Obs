@@ -487,7 +487,36 @@
       "min_values": ["0", "0", "0", "0", "0"],
       "description": "Leecom station, Dehiowita National College",
       "run_name": "Leecom"
+     }, 
+     {
+      "stationId": "curw_ws_attidiya",
+      "name": "Attidiya",
+      "station_meta": ["curw_ws_attidiya", "Attidiya", 6.84564, 79.88467, 0, "Leecom station with their own Rain Gauge"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],
+      "units": ["mm", "oC", "m/s", "degrees", "%"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100"],
+      "min_values": ["0", "0", "0", "0", "0"],
+      "description": "Attidiya",
+      "run_name": "Leecom" 
+     },
+     {
+      "stationId": "curw_ws_kaduwela",
+      "name": "Kaduwela",
+      "station_meta": ["curw_ws_kaduwela", "Kaduwela", 6.93151, 79.97572, 0, "Leecom station with their own Rain Gauge"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity"],
+      "units": ["mm", "oC", "m/s", "degrees", "%"],
+     "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100"],
+      "min_values": ["0", "0", "0", "0", "0"],
+      "description": "Kaduwela",
+      "run_name": "Leecom"
      }
+
 
   ],
   "water_level_stations": [
