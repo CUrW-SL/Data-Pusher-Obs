@@ -30,13 +30,31 @@ def _precipitation_timeseries_processor(timeseries, _=None):
     if timeseries is None or len(timeseries) <= 0:
         return []
 
+    # Max value for precipitation in 100 years for 5 minute time interval
+    qualitControl = 41.63
     index = 0
     new_timeseries = []
-    while (index+1) < len(timeseries):
-        datetime = timeseries[index+1][0]
-        instantaneous_percipitation = timeseries[index+1][1] - timeseries[index][1]
-        value = 0 if instantaneous_percipitation < 0 else instantaneous_percipitation
+    while (index + 1) < len(timeseries):
+        datetime = timeseries[index + 1][0]
+        instantaneous_percipitation = timeseries[index + 1][1] - timeseries[index][1]
+
+        # value = 0 if instantaneous_percipitation < 0 else instantaneous_percipitation
+        # new_timeseries.append([datetime, value])
+        # value = 0 if instantaneous_percipitation < 0 else instantaneous_percipitation
+        if instantaneous_percipitation < 0:
+            value = 0
+
+        elif 0 < instantaneous_percipitation < qualitControl:
+            value = instantaneous_percipitation
+
+        elif instantaneous_percipitation > qualitControl:
+            value = 0
+
+        else:
+            value = 0
+
         new_timeseries.append([datetime, value])
+
         index += 1
 
     return new_timeseries
