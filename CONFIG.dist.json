@@ -446,7 +446,9 @@
       "min_values": ["0"],
       "description": "Leecom water level guage, testing station",
       "run_name": "Leecom",
-      "mean_sea_level": 2.981
+      "mean_sea_level": 2.981,
+      "min_wl": -1.000,
+      "max_wl": 3.000
     },
     {
       "stationId": "curw_wl_diyasaru_uyana",
@@ -461,8 +463,9 @@
       "min_values": ["0"],
       "description": "Yantai water level guage, A&T communication",
       "run_name": "A&T Labs",
-      "mean_sea_level": 2.896
-
+      "mean_sea_level": 2.896,
+      "min_wl": -1.000,
+      "max_wl": 3.000
     },
     {
       "stationId": "curw_wl_janakalakendraya",
@@ -477,7 +480,9 @@
       "min_values": ["0"],
       "description": "Leecom water level guage, Leecom communication box",
       "run_name": "Leecom",
-      "mean_sea_level": 6.716
+      "mean_sea_level": 6.716,
+      "min_wl": -1.000,
+      "max_wl": 3.000
     },
     {
       "stationId": "curw_wl_ingurukade",
@@ -492,7 +497,9 @@
       "min_values": ["0"],
       "description": "Leecom water level guage, Leecom communication box",
       "run_name": "Leecom",
-      "mean_sea_level": 6.975
+      "mean_sea_level": 6.975,
+      "min_wl": -1.000,
+      "max_wl": 3.000
     },
     {
       "stationId": "curw_wl_yakbedda",
@@ -507,7 +514,9 @@
       "min_values": ["0"],
       "description": "Leecom water level guage, Leecom communication box",
       "run_name": "Leecom",
-      "mean_sea_level": 6.005
+      "mean_sea_level": 6.005,
+      "min_wl": -1.000,
+      "max_wl": 3.000
     },
     {
       "stationId": "curw_wl_wellampitiya",
@@ -522,7 +531,9 @@
       "min_values": ["0"],
       "description": "Leecom water level guage, Leecom communication box",
       "run_name": "Leecom",
-      "mean_sea_level": 7.965
+      "mean_sea_level": 7.965,
+      "min_wl": -1.000,
+      "max_wl": 3.000
     },
     {
       "stationId": "curw_wl_wellawatta",
@@ -537,7 +548,9 @@
       "min_values": ["0"],
       "description": "Leecom water level guage, Leecom communication box",
       "run_name": "Leecom",
-      "mean_sea_level": 6.922
+      "mean_sea_level": 6.922,
+      "min_wl": -1.000,
+      "max_wl": 3.000
     },
     {
       "stationId": "curw_wl_kitulgala",
@@ -552,7 +565,9 @@
       "min_values": ["0"],
       "description": "Yantai water level guage, A&T communication",
       "run_name": "A&T Labs",
-      "mean_sea_level": 12.586
+      "mean_sea_level": 12.586,
+      "min_wl": 50.000,
+      "max_wl": 60.000
     },
     {
       "stationId": "curw_wl_ranwala",
@@ -567,7 +582,26 @@
       "min_values": ["0"],
       "description": "Campbell water level guage, A&T communication",
       "run_name": "A&T Labs",
-      "mean_sea_level": 16.872
+      "mean_sea_level": 16.872,
+      "min_wl": 5.000,
+      "max_wl": 12.000
+    },
+    {
+      "stationId": "curw_wl_ranwala_2",
+      "name": "Ranwala Bridge 2",
+      "station_meta": ["curw_wl_ranwala_2", "Ranwala Bridge 2", 6.970684, 80.165117, 0, "Yantai water level guage, Leecom station"],
+      "source": "WaterLevelGuage",
+      "type": "Observed",
+      "variables": ["Waterlevel"],
+      "units": ["m"],
+      "unit_type": ["Instantaneous"],
+      "max_values": ["30"],
+      "min_values": ["0"],
+      "description": "Yantai water level guage, LeeCom station",
+      "run_name": "Leecom",
+      "mean_sea_level": 17.702,
+      "min_wl": 5.000,
+      "max_wl": 12.000
     },
     {
       "stationId": "curw_wl_mattakkuliya",
@@ -597,7 +631,9 @@
       "min_values": ["0"],
       "description": "Campbell water level guage, A&T communication",
       "run_name": "A&T Labs",
-      "mean_sea_level": 11.540
+      "mean_sea_level": 11.540,
+      "min_wl": -1.000,
+      "max_wl": 7.000
     }
   ]
 }
