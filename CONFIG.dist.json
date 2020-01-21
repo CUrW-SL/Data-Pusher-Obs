@@ -590,7 +590,7 @@
       "stationId": "curw_wl_ranwala_2",
       "name": "Ranwala Bridge 2",
       "station_meta": ["curw_wl_ranwala_2", "Ranwala Bridge 2", 6.970684, 80.165117, 0, "Yantai water level guage, Leecom station"],
-      "source": "WaterLevelGuage",
+      "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Waterlevel"],
       "units": ["m"],
