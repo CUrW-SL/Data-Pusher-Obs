@@ -20,7 +20,8 @@ from Utils import \
     extract_n_push_humidity, \
     extract_n_push_solarradiation, \
     extract_n_push_winddirection, \
-    extract_n_push_waterlevel
+    extract_n_push_waterlevel, \
+    extract_n_push_pressure
 
 def utc_to_sl(utc_dt):
     sl_timezone = pytz.timezone('Asia/Colombo')
@@ -138,6 +139,13 @@ try:
                     extract_n_push_waterlevel(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
                 except Exception as ex:
                     print("Error occured while pushing water-level", ex)
+
+            elif variable == 'Pressure':
+                try:
+                    extract_n_push_pressure(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
+                except Exception as ex:
+                    print("Error occured while pushing water-level", ex)
+
             else:
                 print("Unknown variable type: %s" %variable)
 

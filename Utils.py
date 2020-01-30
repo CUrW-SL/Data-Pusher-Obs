@@ -276,6 +276,27 @@ def extract_n_push_humidity(extract_adapter, station, start_date, end_date, pool
             TimeseriesGroupOperation.mysql_5min_avg)
 
 
+def extract_n_push_pressure(extract_adapter, station, start_date, end_date, pool, obs_hash_id):
+    # Create even metadata. Event metadata is used to create timeseries id (event_id) for the timeseries.
+    timeseries_meta = copy.deepcopy(timeseries_meta_struct)
+    timeseries_meta['station'] = station['name']
+    timeseries_meta['variable'] = 'Pressure'
+    timeseries_meta['unit'] = '%'
+    timeseries_meta['type'] = station['type']
+    timeseries_meta['source'] = station['source']
+    timeseries_meta['name'] = station['run_name']
+
+    print("#############Extracting and Pushing Pressure of Station: %s###############" % station['name'])
+
+    _extract_n_push(
+        extract_adapter,
+        station,
+        start_date,
+        end_date, pool, obs_hash_id,
+        timeseries_meta,
+        TimeseriesGroupOperation.mysql_5min_avg)
+
+
 
 def extract_n_push_waterlevel(extract_adapter, station, start_date, end_date, pool, obs_hash_id):
     if 'mean_sea_level' not in station.keys():
