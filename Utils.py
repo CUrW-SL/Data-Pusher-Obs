@@ -281,7 +281,7 @@ def extract_n_push_pressure(extract_adapter, station, start_date, end_date, pool
     timeseries_meta = copy.deepcopy(timeseries_meta_struct)
     timeseries_meta['station'] = station['name']
     timeseries_meta['variable'] = 'Pressure'
-    timeseries_meta['unit'] = '%'
+    timeseries_meta['unit'] = 'mmHg'
     timeseries_meta['type'] = station['type']
     timeseries_meta['source'] = station['source']
     timeseries_meta['name'] = station['run_name']
