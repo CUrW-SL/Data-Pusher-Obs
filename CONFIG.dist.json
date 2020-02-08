@@ -648,6 +648,23 @@
       "mean_sea_level": 11.540,
       "min_wl": -1.000,
       "max_wl": 7.000
+    },
+    {
+      "stationId": "curw_wl_mattakkuliya_2",
+      "name": "Mattakkuliya Bridge 2",
+      "station_meta": ["curw_wl_mattakkuliya_2", "Mattakkuliya Bridge 2", 6.980880, 79.875168, 0, "Yantai water level guage, Leecom station"],
+      "source": "WaterLevelGuage",
+      "type": "Observed",
+      "variables": ["Waterlevel"],
+      "units": ["m"],
+      "unit_type": ["Instantaneous"],
+      "max_values": ["30"],
+      "min_values": ["0"],
+      "description": "Yantai water level guage, Leecom station",
+      "run_name": "Leecom",
+      "mean_sea_level": 7.057,
+      "min_wl": -1.000,
+      "max_wl": 3.000
     }
   ]
 }
