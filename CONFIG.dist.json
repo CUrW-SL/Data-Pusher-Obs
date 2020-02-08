@@ -653,7 +653,7 @@
       "stationId": "curw_wl_mattakkuliya_2",
       "name": "Mattakkuliya Bridge 2",
       "station_meta": ["curw_wl_mattakkuliya_2", "Mattakkuliya Bridge 2", 6.980880, 79.875168, 0, "Yantai water level guage, Leecom station"],
-      "source": "WaterLevelGuage",
+      "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Waterlevel"],
       "units": ["m"],
