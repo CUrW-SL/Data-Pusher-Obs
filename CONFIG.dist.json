@@ -596,7 +596,7 @@
       "min_values": ["0"],
       "description": "Campbell water level guage, A&T communication",
       "run_name": "A&T Labs",
-      "mean_sea_level": 16.872,
+      "mean_sea_level": 18.190,
       "min_wl": 4.000,
       "max_wl": 12.000
     },
@@ -613,7 +613,7 @@
       "min_values": ["0"],
       "description": "Yantai water level guage, LeeCom station",
       "run_name": "Leecom",
-      "mean_sea_level": 17.702,
+      "mean_sea_level": 19.02,
       "min_wl": 5.000,
       "max_wl": 12.000
     },
