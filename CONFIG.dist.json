@@ -542,6 +542,34 @@
       "min_values": ["0", "0", "0", "0", "0", "600"],
       "description": "Leecom station, Anula Vidyalaya Primary School",
       "run_name": "Leecom"
+     },
+     {
+      "stationId": "curw_ws_padukka",
+      "name": "Padukka",
+      "station_meta": ["curw_ws_padukka", "Padukka", 6.839353, 80.088531, 0, "Leecom station, Siri Piyarathana Central College"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Pressure"],
+      "units": ["mm", "oC", "m/s", "degrees", "%", "mmHg"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100", "900"],
+      "min_values": ["0", "0", "0", "0", "0", "600"],
+      "description": "Leecom station, Siri Piyarathana Central College",
+      "run_name": "Leecom"
+     },
+     {
+      "stationId": "curw_ws_narahenpita",
+      "name": "Narahenpita",
+      "station_meta": ["curw_ws_narahenpita", "Narahenpita", 6.901326, 79.882832, 0, "Leecom station, RTC Office Kirimandala mawatha"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Pressure"],
+      "units": ["mm", "oC", "m/s", "degrees", "%", "mmHg"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100", "900"],
+      "min_values": ["0", "0", "0", "0", "0", "600"],
+      "description": "Leecom station, RTC Office Kirimandala mawatha",
+      "run_name": "Leecom"
      }
   ],
   "water_level_stations": [
