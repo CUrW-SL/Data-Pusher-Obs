@@ -584,6 +584,62 @@
       "min_values": ["0", "0", "0", "0", "0", "600"],
       "description": "Leecom station, SLLRDC sub office",
       "run_name": "Leecom"
+     },
+     {
+      "stationId": "curw_ws_jalthara",
+      "name": "Jalthara",
+      "station_meta": ["curw_ws_jalthara", "Jalthara", 6.90028, 80.04624, 0, "Leecom station, Jalthara Maha Vidyalaya"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Pressure"],
+      "units": ["mm", "oC", "m/s", "degrees", "%", "mmHg"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100", "900"],
+      "min_values": ["0", "0", "0", "0", "0", "600"],
+      "description": "Leecom station, Jalthara Maha Vidyalaya",
+      "run_name": "Leecom"
+     },
+     {
+      "stationId": "curw_ws_kandy",
+      "name": "Kandy",
+      "station_meta": ["curw_ws_kandy", "Kandy", 7.289423, 80.649770, 0, "Leecom station, Dharmaraja College"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Pressure"],
+      "units": ["mm", "oC", "m/s", "degrees", "%", "mmHg"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100", "900"],
+      "min_values": ["0", "0", "0", "0", "0", "600"],
+      "description": "Leecom station, Dharmaraja College",
+      "run_name": "Leecom"
+     },
+     {
+      "stationId": "curw_ws_mutwal",
+      "name": "Mutwal",
+      "station_meta": ["curw_ws_mutwal", "Mutwal", 6.95876, 79.86091, 0, "Leecom station, Mutwal Andrews College"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Pressure"],
+      "units": ["mm", "oC", "m/s", "degrees", "%", "mmHg"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100", "900"],
+      "min_values": ["0", "0", "0", "0", "0", "600"],
+      "description": "Leecom station, Mutwal Andrews College",
+      "run_name": "Leecom"
+     },
+     {
+      "stationId": "curw_ws_ruwanwella",
+      "name": "Ruwanwella",
+      "station_meta": ["curw_ws_ruwanwella", "Ruwanwella", 6.997939, 79.986863, 0, "Leecom station, Rajasinghe National School"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Pressure"],
+      "units": ["mm", "oC", "m/s", "degrees", "%", "mmHg"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100", "900"],
+      "min_values": ["0", "0", "0", "0", "0", "600"],
+      "description": "Leecom station, Rajasinghe National School",
+      "run_name": "Leecom"
      }
   ],
   "water_level_stations": [
