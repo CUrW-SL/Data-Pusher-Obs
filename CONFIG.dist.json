@@ -292,20 +292,6 @@
       "run_name": "Leecom"
     },
     {
-      "stationId": "curw_ws_maskeliya",
-      "name": "Maskeliya",
-      "station_meta": ["curw_ws_maskeliya", "Maskeliya", 6.82955, 80.57551, 0, "Leecom station, Saman Eliya Maha Vidyalaya"],
-      "source": "WeatherStation",
-      "type": "Observed",
-      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Pressure"],
-      "units": ["mm", "oC", "m/s", "degrees", "%", "mmHg"],
-      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
-      "max_values": ["120", "40", "30", "360", "100", "900"],
-      "min_values": ["0", "0", "0", "0", "0", "600"],
-      "description": "Leecom station, Saman Eliya Maha Vidyalaya",
-      "run_name": "Leecom"
-    },
-    {
       "stationId": "curw_ws_jaffna",
       "name": "Jaffna",
       "station_meta": ["curw_ws_jaffna", "Jaffna", 9.661416, 80.029467, 0, "Leecom station, District Secretrait - Jaffna"],
