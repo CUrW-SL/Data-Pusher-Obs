@@ -1,7 +1,9 @@
 import copy
 import decimal
 import traceback
+import pandas as pd
 from datetime import datetime, timedelta
+import pandas as pd
 
 
 from db_adapter.curw_obs.station import StationEnum, get_station_id, add_station, update_description
@@ -24,28 +26,87 @@ timeseries_meta_struct = {
     'source': '',
     'name': ''
 }
+def get_time_duration(pre_datetime, lat_datetime):
 
+    datetime_lat = datetime.strptime(lat_datetime, '%Y-%m-%d %H:%M:%S')
+    datetime_pre = datetime.strptime(pre_datetime, '%Y-%m-%d %H:%M:%S')
+
+    duration = datetime_lat - datetime_pre
+
+    duration_in_s = duration.total_seconds()
+    minutes = divmod(duration_in_s, 60)[0]
+
+    return minutes
+
+def get_missing_timsesries(dur_minutes, instantaneous_percipitation, pre_datetime, lat_datetime):
+    no_intervals = int(dur_minutes / 5)
+
+    #no_intervals_1 = int(no_intervals)
+
+    avg_precip = instantaneous_percipitation / no_intervals
+
+    #precep_arr = [avg_precip for _ in range(no_intervals_1 - 1)]
+
+
+    datetime_range = [pre_datetime, lat_datetime]
+    str_timeseries = [str(x) for x in datetime_range]
+
+
+    df_prd_timeseries = pd.period_range(str_timeseries[0], str_timeseries[1], freq="5T0S")
+    df_prd_timeseries = df_prd_timeseries[1:-1]
+
+    df_timeseries = df_prd_timeseries.to_series()
+    timeseries_s = [str(x) for x in df_timeseries]
+
+
+    #new_timeseries = []
+    timeseries = []
+    for time in timeseries_s:
+        time_1 = datetime.strptime(time, '%Y-%m-%d %H:%M')
+        time = time_1.strftime('%Y-%m-%d %H:%M:00')
+        timeseries.append([time, avg_precip])
+
+    print(timeseries)
+    timeseries.append([lat_datetime, avg_precip])
+    return timeseries
 
 def _precipitation_timeseries_processor(timeseries, _=None):
     if timeseries is None or len(timeseries) <= 0:
         return []
 
     # Max value for precipitation in 100 years for 5 minute time interval
+    global value
     qualitControl = 41.63
     index = 0
     new_timeseries = []
     while (index + 1) < len(timeseries):
-        datetime = timeseries[index + 1][0]
-        instantaneous_percipitation = timeseries[index + 1][1] - timeseries[index][1]
+        pre_datetime = timeseries[index][0]
+        lat_datetime = timeseries[index + 1][0]
 
-        # value = 0 if instantaneous_percipitation < 0 else instantaneous_percipitation
-        # new_timeseries.append([datetime, value])
-        # value = 0 if instantaneous_percipitation < 0 else instantaneous_percipitation
+        lat_value = float(timeseries[index + 1][1])
+        pre_value = float(timeseries[index][1])
+
+        instantaneous_percipitation = lat_value - pre_value
+
+        dur_minutes = get_time_duration(pre_datetime, lat_datetime)
+        resample_timeseries = []
         if instantaneous_percipitation < 0:
             value = 0
 
         elif 0 < instantaneous_percipitation < qualitControl:
-            value = instantaneous_percipitation
+
+            if dur_minutes < 10:
+                value = instantaneous_percipitation
+
+            elif 10 <= dur_minutes < 60:
+
+                resample_timeseries = get_missing_timsesries(dur_minutes, instantaneous_percipitation, pre_datetime,
+                                                                 lat_datetime)
+                print(resample_timeseries)
+
+            elif dur_minutes >= 60:
+                value = instantaneous_percipitation
+
 
         elif instantaneous_percipitation > qualitControl:
             value = 0
@@ -53,7 +114,11 @@ def _precipitation_timeseries_processor(timeseries, _=None):
         else:
             value = 0
 
-        new_timeseries.append([datetime, value])
+        if not resample_timeseries:
+            new_timeseries.append([lat_datetime, value])
+
+        else:
+            new_timeseries.extend(resample_timeseries)
 
         index += 1
 
