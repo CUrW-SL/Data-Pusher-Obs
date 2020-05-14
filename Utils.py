@@ -93,12 +93,12 @@ def _precipitation_timeseries_processor(timeseries, _=None):
         if instantaneous_percipitation < 0:
             value = 0
 
-        elif 0 < instantaneous_percipitation < qualitControl:
+        elif 0 <= instantaneous_percipitation < qualitControl:
 
-            if dur_minutes < 10:
+            if dur_minutes < 9:
                 value = instantaneous_percipitation
 
-            elif 10 <= dur_minutes < 60:
+            elif 9 <= dur_minutes < 60:
 
                 resample_timeseries = get_missing_timsesries(dur_minutes, instantaneous_percipitation, pre_datetime,
                                                                  lat_datetime)
@@ -108,7 +108,7 @@ def _precipitation_timeseries_processor(timeseries, _=None):
                 value = instantaneous_percipitation
 
 
-        elif instantaneous_percipitation > qualitControl:
+        elif instantaneous_percipitation >= qualitControl:
             value = 0
 
         else:
