@@ -134,7 +134,7 @@
       "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
       "max_values": ["120", "40", "30", "360", "100", "900"],
       "min_values": ["0", "0", "0", "0", "0", "600"],
-      "description": "Aruwakkalu",
+      "description": "Leecom station, Aruwakkalu Sanitary Landfill",
       "run_name": "Leecom"
     },
     {
@@ -336,7 +336,7 @@
     {
       "stationId": "curw_ws_hingurana",
       "name": "Hingurana",
-      "station_meta": ["curw_ws_hingurana", "Hingurana", 6.90455, 80.40789, 0, "Leecom station with their own Rain Gauge"],
+      "station_meta": ["curw_ws_hingurana", "Hingurana", 6.90455, 80.40789, 0, "Leecom station, Hingurana Kanishta Vidyalaya"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Pressure"],
@@ -344,7 +344,7 @@
       "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
       "max_values": ["120", "40", "30", "360", "100", "900"],
       "min_values": ["0", "0", "0", "0", "0", "600"],
-      "description": "Hingurana Kanishta Vidyalaya",
+      "description": "Leecom station, Hingurana Kanishta Vidyalaya",
       "run_name": "Leecom"
     },
     {
@@ -364,7 +364,7 @@
      {
       "stationId": "curw_ws_attidiya",
       "name": "Attidiya",
-      "station_meta": ["curw_ws_attidiya", "Attidiya", 6.84564, 79.88467, 0, "Leecom station with their own Rain Gauge"],
+      "station_meta": ["curw_ws_attidiya", "Attidiya", 6.84564, 79.88467, 0, "Leecom station, Attidiya"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Pressure"],
@@ -372,7 +372,7 @@
       "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
       "max_values": ["120", "40", "30", "360", "100", "900"],
       "min_values": ["0", "0", "0", "0", "0", "600"],
-      "description": "Attidiya",
+      "description": "Leecom station, Attidiya",
       "run_name": "Leecom" 
      },
      {
