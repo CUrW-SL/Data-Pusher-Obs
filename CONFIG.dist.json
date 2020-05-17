@@ -378,7 +378,7 @@
      {
       "stationId": "curw_ws_kaduwela",
       "name": "Kaduwela",
-      "station_meta": ["curw_ws_kaduwela", "Kaduwela", 6.93151, 79.97572, 0, "Leecom station with their own Rain Gauge"],
+      "station_meta": ["curw_ws_kaduwela", "Kaduwela", 6.93151, 79.97572, 0, "Leecom station, Kaduwela"],
       "source": "WeatherStation",
       "type": "Observed",
       "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Pressure"],
@@ -386,7 +386,7 @@
       "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
       "max_values": ["120", "40", "30", "360", "100", "900"],
       "min_values": ["0", "0", "0", "0", "0", "600"],
-      "description": "Kaduwela",
+      "description": "Leecom station, Kaduwela",
       "run_name": "Leecom"
      },
      {
@@ -727,23 +727,7 @@
      }
   ],
   "water_level_stations": [
-    {
-      "stationId": "curw_wl_test",
-      "name": "Leecom WL Guage",
-      "station_meta": ["curw_wl_test", "Leecom WL Guage", 6.879243, 79.929304, 0, "Leecom water level guage, testing station"],
-      "source": "WeatherStation",
-      "type": "Observed",
-      "variables": ["Waterlevel"],
-      "units": ["m"],
-      "unit_type": ["Instantaneous"],
-      "max_values": ["30"],
-      "min_values": ["0"],
-      "description": "Leecom water level guage, testing station",
-      "run_name": "Leecom",
-      "mean_sea_level": 2.981,
-      "min_wl": -1.000,
-      "max_wl": 3.000
-    },
+
     {
       "stationId": "curw_wl_diyasaru_uyana",
       "name": "Diyasaru Uyana",
