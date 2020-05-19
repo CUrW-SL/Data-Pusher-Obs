@@ -153,7 +153,7 @@ def _waterlevel_timeseries_processor(timeseries, mean_sea_level=None, waterLevel
 
 
 def _extract_n_push(extract_adapter, station, start_date, end_date, pool, obs_hash_id,
-                        timeseries_meta, group_operation,
+                        timeseries_meta, group_operation, obs_hash_id_1=None,
                         timeseries_processor=None, **timeseries_processor_kwargs):
     # If there is no timeseries-id in the extracting DB then just return without doing anything.
 
@@ -188,6 +188,8 @@ def _extract_n_push(extract_adapter, station, start_date, end_date, pool, obs_ha
               % (timeseries_meta['variable'], station['stationId']))
         return False
 
+    if station['stationId'] == 'curw_wl_test':
+        obs_hash_id = obs_hash_id_1
 
     #insert extracted time series to the curwobs db
     inserted_rows = insert_timeseries(pool=pool, timeseries=timeseries, tms_id=obs_hash_id)
@@ -363,12 +365,17 @@ def extract_n_push_pressure(extract_adapter, station, start_date, end_date, pool
 
 
 
-def extract_n_push_waterlevel(extract_adapter, station, start_date, end_date, pool, obs_hash_id):
+def extract_n_push_waterlevel(extract_adapter, station, start_date, end_date, pool, obs_hash_id, obs_hash_id_1=None):
     if 'mean_sea_level' not in station.keys():
         raise AttributeError('Attribute mean_sea_level is required.')
     msl = station['mean_sea_level']
     wl_min = station['min_wl']
     wl_max = station['max_wl']
+
+    if station['stationId'] == 'curw_wl_test':
+        msl = 4.884
+        wl_min = -1.00
+        wl_max = 3.00
 
     # Create even metadata. Event metadata is used to create timeseries id (event_id) for the timeseries.
     timeseries_meta = copy.deepcopy(timeseries_meta_struct)
@@ -387,7 +394,7 @@ def extract_n_push_waterlevel(extract_adapter, station, start_date, end_date, po
         start_date,
         end_date, pool, obs_hash_id,
         timeseries_meta,
-        TimeseriesGroupOperation.mysql_5min_avg,
+        TimeseriesGroupOperation.mysql_5min_avg, obs_hash_id_1,
         timeseries_processor=_waterlevel_timeseries_processor, mean_sea_level=msl, waterLevel_min=wl_min, waterLevel_max=wl_max)
 
 def generate_curw_obs_hash_id(pool, variable, unit, unit_type, latitude, longitude, station_type=None,
