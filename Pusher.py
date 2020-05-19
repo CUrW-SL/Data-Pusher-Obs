@@ -92,13 +92,31 @@ try:
 
         for variable, unit, unit_type in zip(variables, units, unit_types):
 
+            if station['stationId'] == 'curw_wl_test':
+                obs_hash_id = generate_curw_obs_hash_id(pool, variable=variable, unit=unit, unit_type=unit_type,
+                                                        latitude=latitude, longitude=longitude,
+                                                        station_name=station_name, description=description)
+                variable = 'Waterlevel'
+                unit = 'm'
+                unit_type = 'Instantaneous'
+                latitude = 6.9569179
+                longitude = 79.8780352
+                station_name = 'Sedawatta Bridge DS'
+                description = 'Leecom water level guage, Leecom communication box'
+
+                obs_hash_id_1 = generate_curw_obs_hash_id(pool, variable=variable, unit=unit, unit_type=unit_type,
+                                                          latitude=latitude, longitude=longitude,
+                                                          station_name=station_name, description=description)
+
+
+
             obs_hash_id = generate_curw_obs_hash_id(pool, variable=variable, unit=unit, unit_type=unit_type,
                                                     latitude=latitude, longitude=longitude, station_name=station_name, description=description)
             TS = Timeseries(pool=pool)
             prev_end_date = TS.get_end_date(obs_hash_id)
 
             if prev_end_date is not None:
-                start_datetime = (prev_end_date - timedelta(hours=2)).strftime(COMMON_DATE_FORMAT)
+                start_datetime = (prev_end_date - timedelta(hours=35)).strftime(COMMON_DATE_FORMAT)
             if variable == 'Precipitation':
                 try:
                     extract_n_push_precipitation(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
@@ -136,7 +154,7 @@ try:
                     print("Error occured while pushing solar-radiation", ex)
             elif variable == 'Waterlevel':
                 try:
-                    extract_n_push_waterlevel(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id)
+                    extract_n_push_waterlevel(extract_adapter, station, start_datetime, end_datetime, pool, obs_hash_id, obs_hash_id_1)
                 except Exception as ex:
                     print("Error occured while pushing water-level", ex)
 
