@@ -75,7 +75,7 @@ def _precipitation_timeseries_processor(timeseries, _=None):
         return []
 
     # Max value for precipitation in 100 years for 5 minute time interval
-    #global value
+    global value
     qualitControl = 41.63
     index = 0
     new_timeseries = []
@@ -88,14 +88,32 @@ def _precipitation_timeseries_processor(timeseries, _=None):
 
         instantaneous_percipitation = lat_value - pre_value
 
-        #dur_minutes = get_time_duration(pre_datetime, lat_datetime)
-        #resample_timeseries = []
+        dur_minutes = get_time_duration(pre_datetime, lat_datetime)
+        resample_timeseries = []
 
         if instantaneous_percipitation < 0:
             value = 0
 
+
         elif 0 <= instantaneous_percipitation < qualitControl:
-            value = instantaneous_percipitation
+
+            if dur_minutes < 9:
+
+                value = instantaneous_percipitation
+
+
+            elif 9 <= dur_minutes < 60:
+
+                resample_timeseries = get_missing_timsesries(dur_minutes, instantaneous_percipitation, pre_datetime,
+
+                                                             lat_datetime)
+
+                print(resample_timeseries)
+
+
+            elif dur_minutes >= 60:
+
+                value = instantaneous_percipitation
 
         elif instantaneous_percipitation >= qualitControl:
             value = 0
@@ -103,7 +121,12 @@ def _precipitation_timeseries_processor(timeseries, _=None):
         else:
             value = 0
 
-        new_timeseries.append([lat_datetime, value])
+        if not resample_timeseries:
+            new_timeseries.append([lat_datetime, value])
+
+        else:
+            new_timeseries.extend(resample_timeseries)
+
 
         index += 1
 
