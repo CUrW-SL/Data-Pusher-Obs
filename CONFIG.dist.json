@@ -360,6 +360,20 @@
       "run_name": "Leecom" 
      },
      {
+      "stationId": "curw_ws_kithulgala",
+      "name": "Kithulgala",
+      "station_meta": ["curw_ws_kithulgala", "Kithulgala", 7.00497, 80.40895, 0, "Leecom station, Kalyani Maha Vidyalaya"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Precipitation", "Temperature", "WindSpeed", "WindDirection", "Humidity", "Pressure"],
+      "units": ["mm", "oC", "m/s", "degrees", "%", "mmHg"],
+      "unit_type": ["Accumulative", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous", "Instantaneous"],
+      "max_values": ["120", "40", "30", "360", "100", "900"],
+      "min_values": ["0", "0", "0", "0", "0", "600"],
+      "description": "Leecom station, Kalyani Maha Vidyalaya",
+      "run_name": "Leecom"
+     },
+     {
       "stationId": "curw_ws_kaduwela",
       "name": "Kaduwela",
       "station_meta": ["curw_ws_kaduwela", "Kaduwela", 6.93151, 79.97572, 0, "Leecom station, Kaduwela"],
