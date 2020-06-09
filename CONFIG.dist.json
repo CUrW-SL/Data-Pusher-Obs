@@ -927,6 +927,23 @@
       "mean_sea_level": 7.057,
       "min_wl": -1.000,
       "max_wl": 3.000
+    },
+    {
+      "stationId": "curw_wl_ambatale_study",
+      "name": "Ambatale Study",
+      "station_meta": ["curw_wl_ambatale_study", "Ambatale Study", 6.934660, 79.948027, 0, "Yantai water level guage, A&T communication box"],
+      "source": "WeatherStation",
+      "type": "Observed",
+      "variables": ["Waterlevel"],
+      "units": ["m"],
+      "unit_type": ["Instantaneous"],
+      "max_values": ["30"],
+      "min_values": ["0"],
+      "description": "Yantai water level guage, A&T communication box",
+      "run_name": "A&T Labs",
+      "mean_sea_level": 5.60,
+      "min_wl": -1.000,
+      "max_wl": 3.000
     }
   ]
 }
