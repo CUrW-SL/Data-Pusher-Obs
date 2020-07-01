@@ -7,20 +7,6 @@
   },
   "weather_stations": [
     {
-      "stationId": "curw_ambewela",
-      "name": "Ambewela Farm",
-      "station_meta": ["curw_ambewela", "Ambewela Farm", 6.890585 , 80.802551, 0, "A&T Communication Box, Texas Standard Rain Gauge"],
-      "source": "WeatherStation",
-      "type": "Observed",
-      "variables": ["Precipitation"],
-      "units": ["mm"],
-      "unit_type": ["Accumulative"],
-      "max_values": ["120"],
-      "min_values": ["0"],
-      "description": "A&T Communication Box, Texas Standard Rain Gauge",
-      "run_name": "A&T Labs"
-    },
-    {
       "stationId": "curw_kottawa_dharmapala_north",
       "name": "Kottawa North Dharmapala School",
       "station_meta": ["curw_kottawa_dharmapala_north", "Kottawa North Dharmapala School", 6.865576, 79.958180, 0, "Kottawa North Dharmapala School"],
@@ -47,20 +33,6 @@
       "min_values": ["0", "0", "0", "0", "600"],
       "description": "Kotikawatta",
       "run_name": "Leecom"
-    },
-    {
-      "stationId": "curw_dickoya",
-      "name": "Dickoya Study",
-      "station_meta": ["curw_dickoya", "Dickoya Study", 6.8722, 80.60312 , 0, "A&T Communication Box, Texas Standard Rain Gauge"],
-      "source": "WeatherStation",
-      "type": "Observed",
-      "variables": ["Precipitation"],
-      "units": ["mm"],
-      "unit_type": ["Accumulative"],
-      "max_values": ["120"],
-      "min_values": ["0"],
-      "description": "A&T Communication Box, Texas Standard Rain Gauge",
-      "run_name": "A&T Labs"
     },
     {
       "stationId": "curw_uduwawala",
