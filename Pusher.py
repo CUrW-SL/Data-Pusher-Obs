@@ -65,7 +65,7 @@ try:
     # Prepare start and date times.
     now_date = utc_to_sl(datetime.now())
     # now_date = datetime.now()
-    start_datetime_obj = now_date - timedelta(minutes=30)
+    start_datetime_obj = now_date - timedelta(days=2)
     end_datetime_obj = now_date
 
     start_datetime = start_datetime_obj.strftime(COMMON_DATE_FORMATSTRT)
